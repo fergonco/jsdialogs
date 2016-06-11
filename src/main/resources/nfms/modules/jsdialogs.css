@@ -1,0 +1,28 @@
+.jsdialogs-button {
+   background-color: blue;
+   color: white;
+   margin-left: 2px;
+   margin-right: 2px;
+}
+
+.jsdialogs-modal-overlay {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	background-color: rgba(128, 128, 128, 0.4);;
+}
+
+.jsdialogs-modal-message {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	width: 50%;
+	height: 50%;
+	margin: auto;
+	background-color: gray;
+}
