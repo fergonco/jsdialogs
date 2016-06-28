@@ -14,19 +14,27 @@ define([ "message-bus", "jquery" ], function(bus, $) {
       .attr("class", "jsdialogs-modal-overlay")//
       .css("text-align", "center");
 
+      function close() {
+         overlay.remove();
+         if (options.closeAction) {
+            options.closeAction();
+         }
+         $(document).unbind("keydown.close");
+      }
+
       var message = $("<div/>").appendTo(overlay)//
       .attr("id", "jsdialogs-message" + id)//
       .attr("class", "jsdialogs-modal-message")//
       .css("display", "inline-block")//
       .html(options.message);
-      
+
       $("<br/>").appendTo(message);
 
       $("<span>").appendTo(message)//
       .attr("class", "jsdialogs-button")//
       .html("ok")//
       .on("click", function() {
-         overlay.remove();
+         close();
          options.okAction();
       });
 
@@ -34,9 +42,14 @@ define([ "message-bus", "jquery" ], function(bus, $) {
       .attr("class", "jsdialogs-button")//
       .html("Cancelar")//
       .on("click", function() {
-         overlay.remove();
+         close();
       });
 
+      $(document).on("keydown.close", function(e) {
+         if (e.keyCode == 27) {
+            close();
+         }
+      });
    }
 
    bus.listen("jsdialogs.confirm", function(e, options) {
