@@ -1,13 +1,6 @@
 define([ "message-bus", "jquery" ], function(bus, $) {
    var uniqueId = 0;
 
-   bus.send("jsdialogs.confirm", [ {
-      "message" : "Are you sure you want to remove?",
-      "okAction" : function() {
-         remove(d);
-      }
-   } ]);
-
    function show(id, options) {
       var overlay = $("<div/>").appendTo("body")//
       .attr("id", "jsdialogs-overlay" + id)//
