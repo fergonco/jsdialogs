@@ -1,8 +1,15 @@
 .jsdialogs-button {
-   background-color: blue;
-   color: white;
-   margin-left: 2px;
-   margin-right: 2px;
+	cursor: pointer;
+	background: gray;
+	padding: 5px;
+	margin: 10px;
+	display: inline-block;
+}
+
+.jsdialogs-button:hover {
+	cursor: pointer;
+	background-color: #82bde5;
+	color: #000;
 }
 
 .jsdialogs-modal-overlay {
@@ -24,5 +31,7 @@
 	width: 50%;
 	height: 50%;
 	margin: auto;
-	background-color: gray;
+	background-color: lightgray;
+	border: 1px solid;
+	text-align: left;
 }
